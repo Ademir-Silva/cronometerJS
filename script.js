@@ -1,18 +1,55 @@
-let hours, seconds, minutes = 0;
+"use strict";
 
-function hour(){
-    if(minutes > 60){
-        hours++;
-        minutes = 0;
-    }
+let hour = 0;
+let minute = 0;
+let second = 0;
+let millisecond = 0;
+let cronometer;
 
+document.form_main.start.onclick = () => start();
+document.form_main.pause.onclick = () => pause();
+document.form_main.reset.onclick = () => reset();
+
+function start(){
+    pause();
+    cronometer = setInterval( () => { timer(); }, 10);
 }
 
-function second(){
-    seconds++
+function pause(){
+    clearInterval(cronometer);
+}
 
-    if(seconds == 60){
-        minutes++;
-        seconds = 0;
+function reset(){
+    hour, minute, second, millisecond = 0;
+
+    document.getElementById('hour').innerText = '00';
+    document.getElementById('minute').innerText = '00';
+    document.getElementById('second').innerText = '00';
+    document.getElementById('millisecond').innerText = '000';
+}
+
+function timer(){
+    if((millisecond += 10) == 1000){
+        millisecond = 0;
+        second++;
     }
+
+    if(second == 60){
+        second = 0;
+        minute++;
+    }
+
+    if(minute == 60){
+        minute = 0;
+        hour++;
+    }
+
+    document.getElementById('hour').innerText = returnData(hour);
+    document.getElementById('minute').innerText = returnData(minute);
+    document.getElementById('second').innerText = returnData(second);
+    document.getElementById('millisecond').innerHTML = returnData(millisecond);
+}
+
+function returnData(input){
+    return input >= 10 ? input : `0${input}`;
 }

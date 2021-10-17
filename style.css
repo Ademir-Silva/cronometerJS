@@ -20,12 +20,19 @@ body{
     color: #fff;
 }
 
+.title-page{
+    margin-top: 15px;
+}
 
 .timer{
     height: 100%;
 
     font-weight: 700;
     font-size: 4.5rem;
+}
+
+#millisecond{
+    font-size: 1.7rem;
 }
 
 .buttons{
@@ -35,18 +42,31 @@ body{
 }
 
 .buttons > button{
-    margin: 10px;
+    margin: 15px 10PX;
     width: 50px;
-
 
     background: rgb(39, 39, 39);
     border: none;
     border-radius: 5px;
-
+    
+    transition: .2s;
     cursor: pointer;
 }
 
+.buttons > button:hover{
+    background: rgb(108, 19, 116);
+    width: 65px;
+
+/*     transition: .4s; */
+    
+}
+
 .material-icons{
-    font-size: 45px !important;
+    font-size: 35px !important;
     color: #fff;
+    transition: .2s;
+}
+
+.material-icons:hover{
+    font-size: 40px !important;
 }

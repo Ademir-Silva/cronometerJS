@@ -16,14 +16,12 @@
 
         <h1 class="title-page">CronometerJS</h1>
 
-        <div class="timer">
+        <form class="timer" name="form_main">
 
-            <span id="hour">00</span>
-            <span id="minute">:00:</span>
-            <span id="second">00</span>
+            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span><span id="millisecond"> 000</span>
             
             <div class="buttons">
-                <button type="button" name="start">
+                <button type="button" name="start" ondblclick="pause()">
                     <span class="material-icons">play_arrow</span>
                 </button>
     
@@ -35,7 +33,7 @@
                     <span class="material-icons">replay</span>
                 </button>
             </div>
-        </div>
+        </form>
 
     </div>
 
