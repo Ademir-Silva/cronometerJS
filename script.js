@@ -20,9 +20,9 @@ function pause(){
 }
 
 function reset(){
-    hour = 0
-    minute = 0
-    second = 0
+    hour = 0;
+    minute = 0;
+    second = 0;
     millisecond = 0;
 
     document.getElementById('hour').innerText = '00';
