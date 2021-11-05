@@ -3,12 +3,13 @@
 let hour = 0;
 let minute = 0;
 let second = 0;
-let millisecond = 0;
+let millisecond = 100;
 let cronometer;
 
 document.form_main.start.onclick = () => start();
 document.form_main.pause.onclick = () => pause();
 document.form_main.reset.onclick = () => reset();
+
 
 function start(){
     pause();
@@ -23,7 +24,7 @@ function reset(){
     hour = 0;
     minute = 0;
     second = 0;
-    millisecond = 0;
+    millisecond = 100;
 
     document.getElementById('hour').innerText = '00';
     document.getElementById('minute').innerText = '00';
@@ -33,7 +34,7 @@ function reset(){
 
 function timer(){
     if((millisecond += 10) == 1000){
-        millisecond = 0;
+        millisecond = 100;
         second++;
     }
 
